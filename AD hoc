@@ -1,0 +1,30 @@
+*************Start***************
+
+
+Note:- Ad hoc commands (linux)
+
+Step-1 ansible demo -a "ls" (check group )
+step-2 ansible all -a "ls" (check all group)
+step-3 ansible all -a "touch devashish"(run same commands for all nodes)
+step-4 ansible all -a "ls -al"(show all file with hide files)
+step-5 ansible demo -a "sudo yum install httpd -y"( install in all nodes)
+step-6 ansible demo -ba "yum remove httpd -y" (remove package from all nodes)
+
+
+Note:- Ansible module commands
+
+Step-1 ansible demo -b -m yum -a "pkg=httpd state=present" 
+step-2 ansible demo -b -m yum -a "pkg=httpd state=latest" (check updated pkg)
+step-3 ansible demo -b -m yum -a "pkg=httpd state=absent" (remove pkg commands)
+step-4 ansible demo -b -m service -a "name=httpd state=started" (start httpd pkg for all)
+step-5 ansible demo -b -m user -a "user=devashish" (create user for all nodes)
+step-6 cat /etc/passwd (check after create user)
+step-7 ansible demo -b -m copy -a "src=copiedfromserver dest=/tmp" (copy file from server)
+step-8 ls /tmp/ (check copied file)
+
+
+Note:-Setup commands (for node information)
+
+Step-1 ansible demo -m setup (check complete node commands)
+step-2 ansible demo -m setup -a "filter=*ipv4*"( check node ip address)
+
